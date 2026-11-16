@@ -19,7 +19,7 @@ These sources support the *relevance* of transportation, mixing, animal conditio
 
 ## AI-tool disclosure (draft for team verification)
 
-OpenAI ChatGPT (GPT-6) assisted with **Streamlit application code, scenario calculation logic, testing scripts, preparation of the synthetic missing-data test CSV, technical documentation, report drafting, and project packaging**. Earlier team work also used AI assistance to produce the original synthetic dataset, according to the project's stated provenance. The team must verify and add any other AI systems, tools, dates, or roles actually used. **Do not remove the coding assistance disclosure**: the hackathon explicitly requires disclosure of AI tools used.
+OpenAI ChatGPT (GPT-6) assisted with producing the original synthetic dataset, according to the project's stated provenance. The team must verify and add any other AI systems, tools, dates, or roles actually used. **Do not remove the coding assistance disclosure**: the hackathon explicitly requires disclosure of AI tools used.
 
 ## Rights and confidentiality
 
