@@ -1,0 +1,38 @@
+Column_Name,Definition,Unit_or_Type,Notes
+Animal_ID,Unique simulated animal identifier,Text,Unique synthetic ID; no real animal identity.
+Feedlot_ID,One of four fictional feedlots,Category,Simulated Texas Panhandle / western Kansas locations.
+Arrival_Date,Simulated arrival date,Date,Generated dates during 2025.
+Arrival_Season,Season derived from arrival date,Category,"Winter, Spring, Summer, Fall."
+Age_Months,Animal age at arrival,Months,Simulated; clipped to 5–24 months.
+Sex,Steer or heifer,Category,Simulated.
+Breed_Type,Broad crossbred category,Category,Simulated breed grouping.
+Arrival_Weight_lb,Arrival body weight,Pounds,Simulated; not measured.
+Body_Condition_Score_1_to_9,Body condition score,Score,Simulated score on 1–9 scale.
+Vaccination_Status,Reported vaccination status,Category,"Complete, Partial, Unknown, None."
+Previous_Illness_0_1,Prior illness indicator,Binary,"1=yes, 0=no; simulated."
+Preconditioned_0_1,Preconditioning indicator,Binary,"1=yes, 0=no; simulated."
+Days_Since_Weaning,Days since weaning,Days,Simulated.
+Transport_Hours,Transportation duration,Hours,Simulated.
+Transport_Distance_Miles,Transportation distance,Miles,Estimated from simulated hours and speed.
+Number_of_Source_Herds,Number of source herds represented,Count,Simulated; proxy for commingling complexity.
+Auction_Exposure_0_1,Auction exposure indicator,Binary,"1=yes, 0=no; simulated."
+Commingled_0_1,Commingling indicator,Binary,"1=yes, 0=no; simulated."
+Arrival_Processing_Intensity,Relative processing intensity,Category,"Low, Moderate, High; illustrative."
+Stocking_Density_sqft_per_head,Pen area per head,Square feet/head,Illustrative simulated value; verify operational units and realism.
+Pen_Size_Category,Pen size group,Category,"Small, Medium, Large; simulated."
+Ambient_Temperature_F,Ambient temperature at arrival,Degrees F,"Synthetic weather, not observed NOAA data."
+Daily_Temperature_Fluctuation_F,Daily temperature fluctuation,Degrees F,Synthetic weather indicator.
+Relative_Humidity_pct,Relative humidity,Percent,"Synthetic weather, not observed station data."
+Wind_Speed_mph,Wind speed,Miles/hour,Synthetic weather.
+Dust_Index_0_to_1,Illustrative dust index,Index,"Synthetic proxy, not a measured physical concentration."
+Precipitation_in,Precipitation,Inches,Synthetic weather.
+Veterinary_Staff_Available,Staff count assigned/available,People,Illustrative yard-level operating assumption.
+Additional_Monitoring_Slots,Illustrative extra monitoring capacity,Slots,Assumed capacity per simulated cohort; not a validated staffing standard.
+Monitoring_Budget_per_Head_USD,Illustrative monitoring budget,USD/head,Synthetic operating assumption.
+Simulated_BRD_Probability,Probability used by the generator,Probability,Do not use as a predictor when training a model to predict the outcome; it reveals the generating label mechanism.
+BRD_Within_45_Days_0_1,Simulated BRD event within 45 days,Binary,"1=event, 0=no event; generated from the risk mechanism."
+BRD_Onset_Day,Simulated day of BRD onset,Day 1–45,Present only for simulated BRD cases.
+BRD_Severity,Simulated severity category,Category,"Mild, Moderate, Severe; cases only."
+Treatment_Required_0_1,Simulated treatment indicator,Binary,"1=yes, 0=no; not a clinical treatment recommendation."
+Antimicrobial_Exposure_0_1,Simulated antimicrobial exposure indicator,Binary,"1=yes, 0=no; not a prescribing recommendation."
+Recovery_Status,Simulated outcome status by day 45,Category,"No_BRd_event, Recovered, Ongoing_at_day_45, Deceased."
