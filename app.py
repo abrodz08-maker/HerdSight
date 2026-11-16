@@ -9,7 +9,7 @@ import plotly.express as px
 import streamlit as st
 
 BASE = Path(__file__).resolve().parent
-DATA = BASE / 'data' / 'BRD_synthetic_10000_cattle.xlsx'
+DATA = BASE / 'BRD_synthetic_10000_cattle.xlsx'
 FACTORS = {
     'Arrival_Weight_lb': (10, lambda x: 10 if x < 500 else 5 if x < 650 else 0),
     'Age_Months': (5, lambda x: 5 if x < 9 else 0),
@@ -299,8 +299,7 @@ with tabs[6]:
     st.download_button('Download decision summary (JSON)',json.dumps(summary,indent=2).encode(),'HerdSight_decision_summary.json','application/json')
     lines=[f'HERDSIGHT MANAGEMENT DECISION SUMMARY — {date.today()}',f'Feedlots: {", ".join(selected)}',f'Cohort: {cohort_mode}',f'Animals: {n}; high priority: {len(high)}; data review: {len(review)}',f'Selected strategy: {choice}',f'Feasible under entered capacities: {bool(item.Feasible)}',f'45-day BRD cases (assumed): {item.Cases:.1f}',f'Deaths (assumed): {item.Deaths:.1f}',f'Antimicrobial courses (assumed): {item.Antimicrobial_Courses:.1f}',f'Total costs (assumed): ${item.Total_Cost:,.0f}',f'Net savings vs current: ${item.Savings_vs_Current:,.0f}',f'Daily monitoring demand: {item.Daily_Checks:.1f}/{monitor_capacity}',f'Daily vet demand: {item.Daily_Vet_Reviews:.1f}/{vet_capacity}',f'Observation spaces: {item.Spaces:.1f}/{space_capacity}',f'Manager notes: {note}','ASSUMPTIONS, NOT CLINICAL PREDICTIONS. Veterinary oversight required.']
     st.download_button('Download printable summary (TXT)','\n'.join(lines).encode(),'HerdSight_decision_summary.txt','text/plain')
-    st.caption('For a complete end-to-end demonstration, see docs/DEMONSTRATION_CASE.md in the submission ZIP.')
-
+   st.caption('For a complete end-to-end demonstration, see DEMONSTRATION_CASE.md in the GitHub repository.')
 with tabs[7]:
     st.header('Evidence, Evaluation & Limitations')
     st.write('**Decision unit:** individual cattle for review; feedlot-level comparisons for resource allocation. **User:** feedlot manager working with a veterinarian. **Timing:** at arrival and during days 0–45 as data become available.')
@@ -317,8 +316,7 @@ with tabs[7]:
     st.subheader('Decision limitations')
     st.markdown('- Intervention effects are hypothetical; not estimated from randomized or observational causal evidence.\n- Capacity checks are aggregated and do not schedule actual pen moves or urgent clinical cases.\n- The selected 45-day outcome cohort is defined per arrival, not by the current calendar date.\n- Missing-input upper bounds are heuristic worst-case increments, not statistical uncertainty.\n- Antimicrobial use is measured as assumed courses only, not appropriateness or resistance.\n- The original dataset generation script was not provided; a separate reproducible sample generator is included.\n- Model inputs do not include outcome columns, avoiding target leakage.')
     st.subheader('References and responsible use')
-    st.markdown('Merck Veterinary Manual, *Overview of Bovine Respiratory Disease Complex*; Merck Animal Health, *BRD FAQs* and *Advancing your BRD outcomes*. Full links and disclosure in docs/SOURCES_AND_DISCLOSURE.md.')
-    st.warning('Research prototype only. No diagnosis, drug selection, dosage or treatment denial. Clinical decisions require a veterinarian.')
+st.markdown('Merck Veterinary Manual, *Overview of Bovine Respiratory Disease Complex*; Merck Animal Health, *BRD FAQs* and *Advancing your BRD outcomes*. Full links and disclosure in SOURCES_AND_DISCLOSURE.md in the GitHub repository.')    st.warning('Research prototype only. No diagnosis, drug selection, dosage or treatment denial. Clinical decisions require a veterinarian.')
 
 with tabs[8]:
     st.header('The HerdSight Team')
