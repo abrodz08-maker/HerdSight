@@ -1,6 +1,7 @@
 # HerdSight — Livestock Health Intelligence
 
 AISFS × Merck Animal Health Interdisciplinary Hackathon 2026 — independent student research prototype.
+**SPECIFICALLY FOR STREAMLIT VERSION**
 
 ## Quick start (no paid services)
 
